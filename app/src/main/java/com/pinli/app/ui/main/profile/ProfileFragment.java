@@ -23,6 +23,7 @@ public class ProfileFragment extends Fragment {
     private ProfileViewModel vm;
     private boolean ignoreSwitch = false;
     private boolean ignorePrivate = false;
+    private String originalDisplayName = "";
 
     @Nullable
     @Override
@@ -61,8 +62,13 @@ public class ProfileFragment extends Fragment {
             vb.switchPrivate.setChecked(user != null && user.isPrivate);
             ignorePrivate = false;
             if (user != null && user.displayName != null) {
+                originalDisplayName = user.displayName;
                 vb.etDisplayName.setText(user.displayName);
+            } else {
+                originalDisplayName = "";
+                vb.etDisplayName.setText("");
             }
+            updateSaveEnabled();
         });
 
         vm.incomingRequestCount().observe(getViewLifecycleOwner(), c -> {
@@ -95,10 +101,19 @@ public class ProfileFragment extends Fragment {
             startActivity(new Intent(getActivity(), FollowRequestsActivity.class));
         });
 
+        vb.etDisplayName.addTextChangedListener(new android.text.TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            @Override public void afterTextChanged(android.text.Editable s) {
+                vb.tilDisplayName.setError(null);
+                updateSaveEnabled();
+            }
+        });
+
         vb.btnSaveProfile.setOnClickListener(v -> {
             String name = vb.etDisplayName.getText() != null ? vb.etDisplayName.getText().toString().trim() : "";
             if (name.isEmpty()) {
-                android.widget.Toast.makeText(requireContext(), getString(R.string.err_display_name_empty), android.widget.Toast.LENGTH_LONG).show();
+                vb.tilDisplayName.setError(getString(R.string.err_display_name_empty));
                 return;
             }
             vm.updateDisplayName(name, getString(R.string.profile_saved));
@@ -132,6 +147,12 @@ public class ProfileFragment extends Fragment {
         });
 
         vb.btnSignOut.setOnClickListener(v -> vm.signOut());
+    }
+
+    private void updateSaveEnabled() {
+        String name = vb.etDisplayName.getText() != null ? vb.etDisplayName.getText().toString().trim() : "";
+        boolean changed = !name.equals(originalDisplayName);
+        vb.btnSaveProfile.setEnabled(changed);
     }
 
     private String buildHideInfo(@Nullable com.pinli.app.data.model.UserLocation ul) {

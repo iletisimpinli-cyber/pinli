@@ -41,6 +41,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:hint="@string/display_name_label"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
         app:layout_constraintTop_toBottomOf="@id/switchPrivate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -51,6 +53,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/display_name_hint"
             android:inputType="textPersonName"
+            android:imeOptions="actionDone"
+            android:maxLength="30"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
