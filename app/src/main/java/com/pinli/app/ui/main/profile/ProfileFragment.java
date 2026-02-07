@@ -60,6 +60,9 @@ public class ProfileFragment extends Fragment {
             ignorePrivate = true;
             vb.switchPrivate.setChecked(user != null && user.isPrivate);
             ignorePrivate = false;
+            if (user != null && user.displayName != null) {
+                vb.etDisplayName.setText(user.displayName);
+            }
         });
 
         vm.incomingRequestCount().observe(getViewLifecycleOwner(), c -> {
@@ -91,6 +94,16 @@ public class ProfileFragment extends Fragment {
             if (getActivity() == null) return;
             startActivity(new Intent(getActivity(), FollowRequestsActivity.class));
         });
+
+        vb.btnSaveProfile.setOnClickListener(v -> {
+            String name = vb.etDisplayName.getText() != null ? vb.etDisplayName.getText().toString().trim() : "";
+            if (name.isEmpty()) {
+                android.widget.Toast.makeText(requireContext(), getString(R.string.err_display_name_empty), android.widget.Toast.LENGTH_LONG).show();
+                return;
+            }
+            vm.updateDisplayName(name, getString(R.string.profile_saved));
+        });
+
 
         vb.switchHide24h.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (ignoreSwitch) return;

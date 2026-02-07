@@ -104,6 +104,29 @@ public class ProfileViewModel extends ViewModel {
         });
     }
 
+    public void updateDisplayName(@NonNull String displayName, @NonNull String successMessage) {
+        String uid = FirebaseRefs.auth().getCurrentUser() != null ? FirebaseRefs.auth().getCurrentUser().getUid() : null;
+        if (uid == null) { toast.setValue(new UiEvent("Auth error")); return; }
+
+        loading.setValue(true);
+        userRepo.setDisplayName(uid, displayName, new UserRepository.Callback<Boolean>() {
+            @Override public void onSuccess(@NonNull Boolean data) {
+                loading.setValue(false);
+                User u = myUser.getValue();
+                if (u != null) {
+                    u.displayName = displayName;
+                    myUser.setValue(u);
+                }
+                toast.setValue(new UiEvent(successMessage));
+            }
+
+            @Override public void onError(@NonNull String message) {
+                loading.setValue(false);
+                toast.setValue(new UiEvent(message));
+            }
+        });
+    }
+
     public void toggleHidden24h(boolean hide) {
         String uid = FirebaseRefs.auth().getCurrentUser() != null ? FirebaseRefs.auth().getCurrentUser().getUid() : null;
         if (uid == null) { toast.setValue(new UiEvent("Auth error")); return; }

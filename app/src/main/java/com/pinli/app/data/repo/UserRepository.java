@@ -50,6 +50,14 @@ public class UserRepository {
                 .addOnFailureListener(e -> cb.onError(e.getMessage() != null ? e.getMessage() : "DB error"));
     }
 
+    public void setDisplayName(@NonNull String uid, @NonNull String displayName, Callback<Boolean> cb) {
+        db.collection(FirebaseRefs.COL_USERS).document(uid)
+                .update("displayName", displayName, "updatedAt", FieldValue.serverTimestamp())
+                .addOnSuccessListener(v -> cb.onSuccess(true))
+                .addOnFailureListener(e -> cb.onError(e.getMessage() != null ? e.getMessage() : "DB error"));
+    }
+
+
     public void getUser(@NonNull String uid, Callback<User> cb) {
         db.collection(FirebaseRefs.COL_USERS).document(uid)
                 .get()
