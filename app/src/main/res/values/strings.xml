@@ -36,6 +36,11 @@
     <string name="chats_info">MVP: Mesajlar sadece karşılıklı takipte açılır. Bu ekran iskelet olarak hazır.</string>
 
     <string name="profile_title">Profil</string>
+    <string name="display_name_label">Görünen ad</string>
+    <string name="display_name_hint">Adını yaz</string>
+    <string name="save_profile">Profili kaydet</string>
+    <string name="err_display_name_empty">Görünen ad boş olamaz</string>
+    <string name="profile_saved">Profil güncellendi</string>
     <string name="hide_24h">Konumumu 24 saat gizle</string>
     <string name="hide_info_no_location">Gizlemek için önce konum ayarla (Harita ekranında uzun bas).</string>
     <string name="hide_info_visible">Konumun şu anda görünür (yaklaşık).</string>
