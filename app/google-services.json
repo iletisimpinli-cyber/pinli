@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "756070718080",
+    "project_id": "pinli-ea4d1bf",
+    "storage_bucket": "pinli-ea4d1bf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756070718080:android:c6ceb35c1301da353e2465",
+        "android_client_info": {
+          "package_name": "com.pinli.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4J48DJ_V-Pg6PJT0_Mq9f4Y_YSs0J5_8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

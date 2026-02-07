@@ -1,0 +1,107 @@
+<!-- File: app/src/main/res/values/strings.xml -->
+<resources>
+    <string name="app_name">Pinli</string>
+
+    <string name="google_maps_key">AIzaSyBoouWBY8gSHUXsUod3APKnuSoylFm40OE</string>
+
+    <string name="login_title">Pinli</string>
+    <string name="login_subtitle">Telefon numaranla giriş yap</string>
+    <string name="phone_hint">Telefon (+90...)</string>
+    <string name="send_sms">SMS Gönder</string>
+
+    <string name="code_title">Doğrulama</string>
+    <string name="code_hint">Kod</string>
+    <string name="verify">Doğrula</string>
+
+    <string name="err_phone_format">Telefon formatı hatalı. Örn: +905551112233</string>
+    <string name="err_code">Kod hatalı</string>
+    <string name="err_wait_auto">Otomatik doğrulama bekleniyor</string>
+
+    <string name="nav_map">Harita</string>
+    <string name="nav_status">Durum</string>
+    <string name="nav_chats">Mesaj</string>
+    <string name="nav_profile">Profil</string>
+
+    <string name="recenter">Merkeze al</string>
+
+    <string name="status_title">Durum</string>
+    <string name="emoji_hint">Emoji (örn: 😀)</string>
+    <string name="set_emoji_status">Emoji Durum Ayarla</string>
+    <string name="set_photo_status">Foto Durum Ayarla</string>
+    <string name="status_info">Durumlar 5 saat aktif kalır. Foto durum sadece tıklayınca açılır.</string>
+    <string name="pick_photo">Foto seç</string>
+    <string name="err_emoji">Emoji boş olamaz</string>
+
+    <string name="chats_title">Mesajlar</string>
+    <string name="chats_info">MVP: Mesajlar sadece karşılıklı takipte açılır. Bu ekran iskelet olarak hazır.</string>
+
+    <string name="profile_title">Profil</string>
+    <string name="hide_24h">Konumumu 24 saat gizle</string>
+    <string name="hide_info_no_location">Gizlemek için önce konum ayarla (Harita ekranında uzun bas).</string>
+    <string name="hide_info_visible">Konumun şu anda görünür (yaklaşık).</string>
+    <string name="hide_info_hidden">Gizli: %1$s kaldı</string>
+    <string name="hide_confirm_title">Güvenlik Modu</string>
+    <string name="hide_confirm_message">Konumunu 24 saat gizlemek istiyor musun?</string>
+    <string name="err_set_location_first">Önce Harita ekranında konumunu ayarla.</string>
+
+    <string name="location_set_confirm_title">Konum Ayarla</string>
+    <string name="location_set_confirm_msg">Bu noktayı konumun olarak kaydedelim mi? (200m yaklaştırılmış)</string>
+    <string name="location_saved">Konum güncellendi</string>
+    <string name="long_press_hint">Konum ayarlamak için haritada uzun bas.</string>
+
+    <string name="ok">Tamam</string>
+    <string name="cancel">Vazgeç</string>
+    <string name="sign_out">Çıkış Yap</string>
+
+    <!-- Follow / Chat -->
+    <string name="follow">Takip Et</string>
+    <string name="unfollow">Takibi Bırak</string>
+    <string name="request_follow">Takip İsteği Gönder</string>
+    <string name="requested">İstek Gönderildi (İptal)</string>
+
+    <string name="message">Mesaj</string>
+    <string name="message_locked">Mesaj (Kilitli)</string>
+    <string name="message_hint">Mesaj yaz…</string>
+    <string name="send">Gönder</string>
+
+    <string name="chat_title">Sohbet</string>
+    <string name="chats_empty">Henüz mesaj yok. Haritadaki kişilerle karşılıklı takip olunca sohbet açılır.</string>
+
+    <string name="private_account">Hesabım gizli</string>
+    <string name="follow_requests_title">Takip İstekleri</string>
+    <string name="follow_requests_empty">Henüz istek yok.</string>
+    <string name="follow_requests_button">Takip istekleri</string>
+    <string name="follow_requests_button_with_count">Takip istekleri (%1$d)</string>
+    <string name="accept">Kabul</string>
+    <string name="reject">Reddet</string>
+    <string name="follow_request_meta">Seni takip etmek istiyor</string>
+
+    <string name="block">Engelle</string>
+    <string name="unblock">Engeli Kaldır</string>
+    <string name="blocked_done">Engellendi</string>
+    <string name="unblocked_done">Engel kaldırıldı</string>
+    <string name="block_confirm_title">Engelle</string>
+    <string name="block_confirm_message">Bu kullanıcıyı engellemek istiyor musun? Engellediğinde haritada ve mesajlarda görünmez.</string>
+
+    <string name="report">Şikayet Et</string>
+    <string name="report_title">Şikayet</string>
+    <string name="report_done">Şikayet iletildi</string>
+    <string name="report_reason_spam">Spam</string>
+    <string name="report_reason_abuse">Taciz / hakaret</string>
+    <string name="report_reason_fake">Sahte hesap</string>
+    <string name="report_reason_other">Diğer</string>
+
+    <string name="err_message_requires_mutual">Mesaj için karşılıklı takip gerekli.</string>
+    <string name="err_blocked">Engelli kullanıcı.</string>
+
+    <string name="user_sheet_loading">Yükleniyor…</string>
+    <string name="user_sheet_unknown">Kullanıcı</string>
+    <string name="user_sheet_you">Bu sensin</string>
+    <string name="user_sheet_meta_default">Konum pini</string>
+    <string name="user_sheet_meta_public">Açık hesap</string>
+    <string name="user_sheet_meta_private">Gizli hesap (takip isteği gerekir)</string>
+    <string name="user_sheet_meta_you">Profil ayarların için Profil sekmesine git.</string>
+    <string name="user_sheet_blocked">Bu kullanıcıyı engelledin.</string>
+    <string name="user_sheet_blocked_me">Bu kullanıcı seni engelledi.</string>
+
+</resources>

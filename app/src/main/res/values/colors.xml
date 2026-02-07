@@ -1,0 +1,5 @@
+<!-- File: app/src/main/res/values/colors.xml -->
+<resources>
+    <color name="pinli_primary">#6750A4</color>
+    <color name="pinli_secondary">#625B71</color>
+</resources>

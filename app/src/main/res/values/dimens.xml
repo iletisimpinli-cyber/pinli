@@ -1,0 +1,4 @@
+<!-- File: app/src/main/res/values/dimens.xml -->
+<resources>
+    <dimen name="pad_16">16dp</dimen>
+</resources>

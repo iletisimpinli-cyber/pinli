@@ -1,0 +1,7 @@
+    <!-- Bu dosya foreground ikon istiyor ama sende yok. İki seçenek var:
+         EN HIZLI ÇÖZÜM: adaptive icon foreground'u kaldırıp, direkt launcher ikonunu kullan.
+         Aşağıdaki dosyayı bununla DEĞİŞTİR. -->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@android:color/black" />
+    <foreground android:drawable="@mipmap/ic_launcher" />
+</adaptive-icon>

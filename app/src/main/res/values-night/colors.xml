@@ -1,0 +1,5 @@
+<!-- File: app/src/main/res/values-night/colors.xml -->
+<resources>
+    <color name="pinli_primary">#D0BCFF</color>
+    <color name="pinli_secondary">#CCC2DC</color>
+</resources>

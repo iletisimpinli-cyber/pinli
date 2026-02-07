@@ -1,0 +1,12 @@
+<!-- File: app/src/main/res/values-night/themes.xml -->
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.Pinli" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/pinli_primary</item>
+        <item name="colorSecondary">@color/pinli_secondary</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+    </style>
+
+    <style name="Theme.Pinli.NoActionBar" parent="Theme.Pinli" />
+</resources>

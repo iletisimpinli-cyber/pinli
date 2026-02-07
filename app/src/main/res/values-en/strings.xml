@@ -1,0 +1,107 @@
+<!-- File: app/src/main/res/values-en/strings.xml -->
+<resources>
+    <string name="app_name">Pinli</string>
+
+    <string name="google_maps_key">YOUR_GOOGLE_MAPS_KEY_HERE</string>
+
+    <string name="login_title">Pinli</string>
+    <string name="login_subtitle">Sign in with your phone number</string>
+    <string name="phone_hint">Phone (+90...)</string>
+    <string name="send_sms">Send SMS</string>
+
+    <string name="code_title">Verification</string>
+    <string name="code_hint">Code</string>
+    <string name="verify">Verify</string>
+
+    <string name="err_phone_format">Invalid phone format. Example: +905551112233</string>
+    <string name="err_code">Invalid code</string>
+    <string name="err_wait_auto">Waiting for auto verification</string>
+
+    <string name="nav_map">Map</string>
+    <string name="nav_status">Status</string>
+    <string name="nav_chats">Chats</string>
+    <string name="nav_profile">Profile</string>
+
+    <string name="recenter">Recenter</string>
+
+    <string name="status_title">Status</string>
+    <string name="emoji_hint">Emoji (e.g. 😀)</string>
+    <string name="set_emoji_status">Set Emoji Status</string>
+    <string name="set_photo_status">Set Photo Status</string>
+    <string name="status_info">Statuses stay active for 5 hours. Photo status opens on tap.</string>
+    <string name="pick_photo">Pick photo</string>
+    <string name="err_emoji">Emoji cannot be empty</string>
+
+    <string name="chats_title">Chats</string>
+    <string name="chats_info">MVP: Chat opens only for mutual follows. This screen is scaffolded.</string>
+
+    <string name="profile_title">Profile</string>
+    <string name="hide_24h">Hide my location for 24 hours</string>
+    <string name="hide_info_no_location">Set a location first (long-press on the Map screen).</string>
+    <string name="hide_info_visible">Your location is currently visible (approx.).</string>
+    <string name="hide_info_hidden">Hidden: %1$s left</string>
+    <string name="hide_confirm_title">Safety Mode</string>
+    <string name="hide_confirm_message">Hide your location for 24 hours?</string>
+    <string name="err_set_location_first">Set your location on the Map screen first.</string>
+
+    <string name="location_set_confirm_title">Set Location</string>
+    <string name="location_set_confirm_msg">Save this point as your location? (snapped to ~200m)</string>
+    <string name="location_saved">Location updated</string>
+    <string name="long_press_hint">Long-press on the map to set your location.</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="sign_out">Sign Out</string>
+
+    <!-- Follow / Chat -->
+    <string name="follow">Follow</string>
+    <string name="unfollow">Unfollow</string>
+    <string name="request_follow">Request follow</string>
+    <string name="requested">Requested (Cancel)</string>
+
+    <string name="message">Message</string>
+    <string name="message_locked">Message (Locked)</string>
+    <string name="message_hint">Type a message…</string>
+    <string name="send">Send</string>
+
+    <string name="chat_title">Chat</string>
+    <string name="chats_empty">No chats yet. Chats open after mutual follow.</string>
+
+    <string name="private_account">Private account</string>
+    <string name="follow_requests_title">Follow requests</string>
+    <string name="follow_requests_empty">No requests.</string>
+    <string name="follow_requests_button">Follow requests</string>
+    <string name="follow_requests_button_with_count">Follow requests (%1$d)</string>
+    <string name="accept">Accept</string>
+    <string name="reject">Reject</string>
+    <string name="follow_request_meta">Wants to follow you</string>
+
+    <string name="block">Block</string>
+    <string name="unblock">Unblock</string>
+    <string name="blocked_done">Blocked</string>
+    <string name="unblocked_done">Unblocked</string>
+    <string name="block_confirm_title">Block</string>
+    <string name="block_confirm_message">Block this user? They will be hidden on map and chats.</string>
+
+    <string name="report">Report</string>
+    <string name="report_title">Report</string>
+    <string name="report_done">Report submitted</string>
+    <string name="report_reason_spam">Spam</string>
+    <string name="report_reason_abuse">Harassment</string>
+    <string name="report_reason_fake">Fake account</string>
+    <string name="report_reason_other">Other</string>
+
+    <string name="err_message_requires_mutual">Mutual follow required for messaging.</string>
+    <string name="err_blocked">Blocked user.</string>
+
+    <string name="user_sheet_loading">Loading…</string>
+    <string name="user_sheet_unknown">User</string>
+    <string name="user_sheet_you">This is you</string>
+    <string name="user_sheet_meta_default">Map pin</string>
+    <string name="user_sheet_meta_public">Public account</string>
+    <string name="user_sheet_meta_private">Private account (request required)</string>
+    <string name="user_sheet_meta_you">Go to Profile tab for settings.</string>
+    <string name="user_sheet_blocked">You blocked this user.</string>
+    <string name="user_sheet_blocked_me">This user blocked you.</string>
+
+</resources>
