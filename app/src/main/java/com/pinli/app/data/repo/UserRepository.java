@@ -58,6 +58,9 @@ public class UserRepository {
     }
 
 
+
+
+
     public void getUser(@NonNull String uid, Callback<User> cb) {
         db.collection(FirebaseRefs.COL_USERS).document(uid)
                 .get()
