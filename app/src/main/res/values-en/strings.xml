@@ -36,6 +36,13 @@
     <string name="chats_info">MVP: Chat opens only for mutual follows. This screen is scaffolded.</string>
 
     <string name="profile_title">Profile</string>
+    <string name="display_name_label">Display name</string>
+    <string name="display_name_hint">Write your name</string>
+    <string name="profile_bio_label">Bio</string>
+    <string name="profile_bio_hint">Tell me briefly about yourself.</string>
+    <string name="save_profile">Save profile</string>
+    <string name="err_display_name_empty">The display name cannot be empty.</string>
+    <string name="profile_saved">Profile updated</string>
     <string name="hide_24h">Hide my location for 24 hours</string>
     <string name="hide_info_no_location">Set a location first (long-press on the Map screen).</string>
     <string name="hide_info_visible">Your location is currently visible (approx.).</string>

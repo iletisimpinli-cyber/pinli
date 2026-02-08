@@ -33,6 +33,7 @@ public class UserRepository {
                     data.put("uid", uid);
                     data.put("phone", phone);
                     data.put("displayName", "Pinli");
+                    data.put("bio", "");
                     data.put("photoUrl", null);
                     data.put("isPrivate", false);
                     data.put("createdAt", Time.now());
@@ -57,9 +58,16 @@ public class UserRepository {
                 .addOnFailureListener(e -> cb.onError(e.getMessage() != null ? e.getMessage() : "DB error"));
     }
 
-
-
-
+    public void setProfile(@NonNull String uid, @NonNull String displayName, @NonNull String bio, Callback<Boolean> cb) {
+        Map<String, Object> updates = new HashMap<>();
+        updates.put("displayName", displayName);
+        updates.put("bio", bio);
+        updates.put("updatedAt", FieldValue.serverTimestamp());
+        db.collection(FirebaseRefs.COL_USERS).document(uid)
+                .update(updates)
+                .addOnSuccessListener(v -> cb.onSuccess(true))
+                .addOnFailureListener(e -> cb.onError(e.getMessage() != null ? e.getMessage() : "DB error"));
+    }
 
     public void getUser(@NonNull String uid, Callback<User> cb) {
         db.collection(FirebaseRefs.COL_USERS).document(uid)

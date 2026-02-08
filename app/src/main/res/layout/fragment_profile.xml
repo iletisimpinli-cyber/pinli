@@ -59,6 +59,29 @@
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilBio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="@string/profile_bio_label"
+        app:counterEnabled="true"
+        app:counterMaxLength="140"
+        app:layout_constraintTop_toBottomOf="@id/tilDisplayName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etBio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/profile_bio_hint"
+            android:inputType="textMultiLine"
+            android:imeOptions="actionDone"
+            android:maxLength="140"
+            android:maxLines="4" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSaveProfile"
         style="?attr/materialButtonOutlinedStyle"
@@ -66,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/save_profile"
-        app:layout_constraintTop_toBottomOf="@id/tilDisplayName"
+        app:layout_constraintTop_toBottomOf="@id/tilBio"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

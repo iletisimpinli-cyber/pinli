@@ -38,6 +38,8 @@
     <string name="profile_title">Profil</string>
     <string name="display_name_label">Görünen ad</string>
     <string name="display_name_hint">Adını yaz</string>
+    <string name="profile_bio_label">Bio</string>
+    <string name="profile_bio_hint">Kendinden kısaca bahset</string>
     <string name="save_profile">Profili kaydet</string>
     <string name="err_display_name_empty">Görünen ad boş olamaz</string>
     <string name="profile_saved">Profil güncellendi</string>
