@@ -8,6 +8,7 @@ public class User {
     public String uid;
     public String phone;
     public String displayName;
+    public String bio;
     public String photoUrl;
     public boolean isPrivate;
     public long createdAt;

@@ -104,17 +104,18 @@ public class ProfileViewModel extends ViewModel {
         });
     }
 
-    public void updateDisplayName(@NonNull String displayName, @NonNull String successMessage) {
+    public void updateProfile(@NonNull String displayName, @NonNull String bio, @NonNull String successMessage) {
         String uid = FirebaseRefs.auth().getCurrentUser() != null ? FirebaseRefs.auth().getCurrentUser().getUid() : null;
         if (uid == null) { toast.setValue(new UiEvent("Auth error")); return; }
 
         loading.setValue(true);
-        userRepo.setDisplayName(uid, displayName, new UserRepository.Callback<Boolean>() {
+        userRepo.setProfile(uid, displayName, bio, new UserRepository.Callback<Boolean>() {
             @Override public void onSuccess(@NonNull Boolean data) {
                 loading.setValue(false);
                 User u = myUser.getValue();
                 if (u != null) {
                     u.displayName = displayName;
+                    u.bio = bio;
                     myUser.setValue(u);
                 }
                 toast.setValue(new UiEvent(successMessage));

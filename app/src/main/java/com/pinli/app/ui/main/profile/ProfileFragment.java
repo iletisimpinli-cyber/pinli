@@ -24,6 +24,7 @@ public class ProfileFragment extends Fragment {
     private boolean ignoreSwitch = false;
     private boolean ignorePrivate = false;
     private String originalDisplayName = "";
+    private String originalBio = "";
 
     @Nullable
     @Override
@@ -68,6 +69,13 @@ public class ProfileFragment extends Fragment {
                 originalDisplayName = "";
                 vb.etDisplayName.setText("");
             }
+            if (user != null && user.bio != null) {
+                originalBio = user.bio;
+                vb.etBio.setText(user.bio);
+            } else {
+                originalBio = "";
+                vb.etBio.setText("");
+            }
             updateSaveEnabled();
         });
 
@@ -110,13 +118,22 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        vb.etBio.addTextChangedListener(new android.text.TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            @Override public void afterTextChanged(android.text.Editable s) {
+                updateSaveEnabled();
+            }
+        });
+
         vb.btnSaveProfile.setOnClickListener(v -> {
             String name = vb.etDisplayName.getText() != null ? vb.etDisplayName.getText().toString().trim() : "";
             if (name.isEmpty()) {
                 vb.tilDisplayName.setError(getString(R.string.err_display_name_empty));
                 return;
             }
-            vm.updateDisplayName(name, getString(R.string.profile_saved));
+            String bio = vb.etBio.getText() != null ? vb.etBio.getText().toString().trim() : "";
+            vm.updateProfile(name, bio, getString(R.string.profile_saved));
         });
 
         vb.switchHide24h.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -151,8 +168,9 @@ public class ProfileFragment extends Fragment {
 
     private void updateSaveEnabled() {
         String name = vb.etDisplayName.getText() != null ? vb.etDisplayName.getText().toString().trim() : "";
-        boolean changed = !name.equals(originalDisplayName);
-        vb.btnSaveProfile.setEnabled(changed);
+        String bio = vb.etBio.getText() != null ? vb.etBio.getText().toString().trim() : "";
+        boolean changed = !name.equals(originalDisplayName) || !bio.equals(originalBio);
+        vb.btnSaveProfile.setEnabled(changed && !name.isEmpty());
     }
 
     private String buildHideInfo(@Nullable com.pinli.app.data.model.UserLocation ul) {
