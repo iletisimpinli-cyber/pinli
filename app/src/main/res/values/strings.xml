@@ -43,6 +43,10 @@
     <string name="save_profile">Profili kaydet</string>
     <string name="err_display_name_empty">Görünen ad boş olamaz</string>
     <string name="profile_saved">Profil güncellendi</string>
+    <string name="followers_count">Takipçi: %1$d</string>
+    <string name="following_count">Takip: %1$d</string>
+    <string name="followers_count_placeholder">Takipçi: 0</string>
+    <string name="following_count_placeholder">Takip: 0</string>
     <string name="hide_24h">Konumumu 24 saat gizle</string>
     <string name="hide_info_no_location">Gizlemek için önce konum ayarla (Harita ekranında uzun bas).</string>
     <string name="hide_info_visible">Konumun şu anda görünür (yaklaşık).</string>

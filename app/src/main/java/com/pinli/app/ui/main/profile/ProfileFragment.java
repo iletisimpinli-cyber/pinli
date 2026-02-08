@@ -87,6 +87,16 @@ public class ProfileFragment extends Fragment {
             vb.btnFollowRequests.setText(text);
         });
 
+        vm.followerCount().observe(getViewLifecycleOwner(), c -> {
+            int count = c != null ? c : 0;
+            vb.tvFollowerCount.setText(getString(R.string.followers_count, count));
+        });
+
+        vm.followingCount().observe(getViewLifecycleOwner(), c -> {
+            int count = c != null ? c : 0;
+            vb.tvFollowingCount.setText(getString(R.string.following_count, count));
+        });
+
         vm.myLocation().observe(getViewLifecycleOwner(), ul -> {
             // Set initial state without triggering listener.
             ignoreSwitch = true;
@@ -196,7 +206,10 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        if (vm != null) vm.refreshIncomingRequestsCount();
+        if (vm != null) {
+            vm.refreshIncomingRequestsCount();
+            vm.refreshFollowCounts();
+        }
     }
 
     @Override
