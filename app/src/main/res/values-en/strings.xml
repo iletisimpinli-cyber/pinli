@@ -48,6 +48,16 @@
     <string name="hide_info_visible">Your location is currently visible (approx.).</string>
     <string name="hide_info_hidden">Hidden: %1$s left</string>
     <string name="hide_confirm_title">Safety Mode</string>
+
+    <string name="followers_count">Takipçi: %1$d</string>
+    <string name="following_count">Takip: %1$d</string>
+    <string name="followers_count_placeholder">Takipçi: 0</string>
+    <string name="following_count_placeholder">Takip: 0</string>
+    <string name="followers_title">Takipçiler</string>
+    <string name="following_title">Takip Edilenler</string>
+    <string name="followers_empty">Henüz takipçin yok.</string>
+    <string name="following_empty">Henüz takip ettiğin kimse yok.</string>
+
     <string name="hide_confirm_message">Hide your location for 24 hours?</string>
     <string name="err_set_location_first">Set your location on the Map screen first.</string>
 

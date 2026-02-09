@@ -87,6 +87,20 @@ public class ProfileFragment extends Fragment {
             vb.btnFollowRequests.setText(text);
         });
 
+        vm.followerCount().observe(getViewLifecycleOwner(), c -> {
+            int count = c != null ? c : 0;
+            vb.tvFollowerCount.setText(getString(R.string.followers_count, count));
+        });
+
+        vm.followingCount().observe(getViewLifecycleOwner(), c -> {
+            int count = c != null ? c : 0;
+            vb.tvFollowingCount.setText(getString(R.string.following_count, count));
+        });
+
+        vb.tvFollowerCount.setOnClickListener(v -> openFollowList(FollowListActivity.TYPE_FOLLOWERS));
+        vb.tvFollowingCount.setOnClickListener(v -> openFollowList(FollowListActivity.TYPE_FOLLOWING));
+
+
         vm.myLocation().observe(getViewLifecycleOwner(), ul -> {
             // Set initial state without triggering listener.
             ignoreSwitch = true;
@@ -132,7 +146,8 @@ public class ProfileFragment extends Fragment {
                 vb.tilDisplayName.setError(getString(R.string.err_display_name_empty));
                 return;
             }
-            vm.updateDisplayName(name, getString(R.string.profile_saved));
+            String bio = vb.etBio.getText() != null ? vb.etBio.getText().toString().trim() : "";
+            vm.updateProfile(name, bio, getString(R.string.profile_saved));
         });
 
         vb.btnSaveProfile.setOnClickListener(v -> {
@@ -205,10 +220,20 @@ public class ProfileFragment extends Fragment {
         return hours + "h " + minutes + "m";
     }
 
+    private void openFollowList(@NonNull String type) {
+        if (getActivity() == null) return;
+        Intent intent = new Intent(getActivity(), FollowListActivity.class);
+        intent.putExtra(FollowListActivity.EXTRA_TYPE, type);
+        startActivity(intent);
+    }
+
     @Override
     public void onResume() {
         super.onResume();
-        if (vm != null) vm.refreshIncomingRequestsCount();
+        if (vm != null) {
+            vm.refreshIncomingRequestsCount();
+            vm.refreshFollowCounts();
+        }
     }
 
     @Override

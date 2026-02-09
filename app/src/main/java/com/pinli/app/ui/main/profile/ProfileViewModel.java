@@ -31,7 +31,8 @@ public class ProfileViewModel extends ViewModel {
     private final MutableLiveData<UserLocation> myLocation = new MutableLiveData<>(null);
     private final MutableLiveData<User> myUser = new MutableLiveData<>(null);
     private final MutableLiveData<Integer> incomingRequestCount = new MutableLiveData<>(0);
-
+    private final MutableLiveData<Integer> followerCount = new MutableLiveData<>(0);
+    private final MutableLiveData<Integer> followingCount = new MutableLiveData<>(0);
     private ListenerRegistration myLocReg;
 
     public LiveData<Boolean> loading() { return loading; }
@@ -40,7 +41,8 @@ public class ProfileViewModel extends ViewModel {
     public LiveData<UserLocation> myLocation() { return myLocation; }
     public LiveData<User> myUser() { return myUser; }
     public LiveData<Integer> incomingRequestCount() { return incomingRequestCount; }
-
+    public LiveData<Integer> followerCount() { return followerCount; }
+    public LiveData<Integer> followingCount() { return followingCount; }
     public void start() {
         String uid = FirebaseRefs.auth().getCurrentUser() != null ? FirebaseRefs.auth().getCurrentUser().getUid() : null;
         if (uid == null) return;
@@ -70,6 +72,7 @@ public class ProfileViewModel extends ViewModel {
 
         // pending requests count
         refreshIncomingRequestsCount();
+        refreshFollowCounts();
     }
 
     public void refreshIncomingRequestsCount() {
@@ -77,6 +80,19 @@ public class ProfileViewModel extends ViewModel {
         if (uid == null) return;
         followRepo.loadIncomingRequestsCount(uid, new FollowRepository.Callback<Integer>() {
             @Override public void onSuccess(@NonNull Integer data) { incomingRequestCount.setValue(data); }
+            @Override public void onError(@NonNull String message) { /* ignore */ }
+        });
+    }
+
+    public void refreshFollowCounts() {
+        String uid = FirebaseRefs.auth().getCurrentUser() != null ? FirebaseRefs.auth().getCurrentUser().getUid() : null;
+        if (uid == null) return;
+        followRepo.loadFollowers(uid, new FollowRepository.Callback<java.util.Set<String>>() {
+            @Override public void onSuccess(@NonNull java.util.Set<String> data) { followerCount.setValue(data.size()); }
+            @Override public void onError(@NonNull String message) { /* ignore */ }
+        });
+        followRepo.loadFollowing(uid, new FollowRepository.Callback<java.util.Set<String>>() {
+            @Override public void onSuccess(@NonNull java.util.Set<String> data) { followingCount.setValue(data.size()); }
             @Override public void onError(@NonNull String message) { /* ignore */ }
         });
     }
@@ -103,7 +119,6 @@ public class ProfileViewModel extends ViewModel {
             }
         });
     }
-
     public void updateProfile(@NonNull String displayName, @NonNull String bio, @NonNull String successMessage) {
         String uid = FirebaseRefs.auth().getCurrentUser() != null ? FirebaseRefs.auth().getCurrentUser().getUid() : null;
         if (uid == null) { toast.setValue(new UiEvent("Auth error")); return; }

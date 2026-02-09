@@ -36,13 +36,6 @@
     <string name="chats_info">MVP: Mesajlar sadece karşılıklı takipte açılır. Bu ekran iskelet olarak hazır.</string>
 
     <string name="profile_title">Profil</string>
-    <string name="display_name_label">Görünen ad</string>
-    <string name="display_name_hint">Adını yaz</string>
-    <string name="profile_bio_label">Bio</string>
-    <string name="profile_bio_hint">Kendinden kısaca bahset</string>
-    <string name="save_profile">Profili kaydet</string>
-    <string name="err_display_name_empty">Görünen ad boş olamaz</string>
-    <string name="profile_saved">Profil güncellendi</string>
     <string name="hide_24h">Konumumu 24 saat gizle</string>
     <string name="hide_info_no_location">Gizlemek için önce konum ayarla (Harita ekranında uzun bas).</string>
     <string name="hide_info_visible">Konumun şu anda görünür (yaklaşık).</string>
@@ -50,6 +43,22 @@
     <string name="hide_confirm_title">Güvenlik Modu</string>
     <string name="hide_confirm_message">Konumunu 24 saat gizlemek istiyor musun?</string>
     <string name="err_set_location_first">Önce Harita ekranında konumunu ayarla.</string>
+
+    <string name="display_name_label">Görünen ad</string>
+    <string name="display_name_hint">Adını yaz</string>
+    <string name="profile_bio_label">Bio</string>
+    <string name="profile_bio_hint">Kendinden kısaca bahset</string>
+    <string name="save_profile">Profili kaydet</string>
+    <string name="err_display_name_empty">Görünen ad boş olamaz</string>
+    <string name="profile_saved">Profil güncellendi</string>
+    <string name="followers_count">Takipçi: %1$d</string>
+    <string name="following_count">Takip: %1$d</string>
+    <string name="followers_count_placeholder">Takipçi: 0</string>
+    <string name="following_count_placeholder">Takip: 0</string>
+    <string name="followers_title">Takipçiler</string>
+    <string name="following_title">Takip Edilenler</string>
+    <string name="followers_empty">Henüz takipçin yok.</string>
+    <string name="following_empty">Henüz takip ettiğin kimse yok.</string>
 
     <string name="location_set_confirm_title">Konum Ayarla</string>
     <string name="location_set_confirm_msg">Bu noktayı konumun olarak kaydedelim mi? (200m yaklaştırılmış)</string>
